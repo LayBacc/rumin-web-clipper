@@ -1,0 +1,33 @@
+{
+  "name": "Rumin_Chrome_extension",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development --output ./src/main.js --watch",
+    "build": "webpack --mode production --output ./src/main.js --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-transform-async-to-generator": "^7.8.3",
+    "@babel/plugin-transform-regenerator": "^7.8.3",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-react": "^7.8.3",
+    "babel-loader": "^8.0.6",
+    "react": "^16.13.1",
+    "react-datepicker": "^2.13.0",
+    "react-dom": "^16.13.1",
+    "tesseract.js": "^2.1.1",
+    "tiny-tfidf": "^0.9.1",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.11"
+  },
+  "dependencies": {
+    "slate": "^0.57.2",
+    "slate-react": "^0.57.2"
+  }
+}
