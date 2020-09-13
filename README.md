@@ -1,13 +1,14 @@
 # Rumin Web Clipper
 Browser extension for [Rumin](https://getrumin.com) which allows you to save learnings from online resources. ([Chrome Web Store  link](https://chrome.google.com/webstore/detail/rumin/eboiffdknchlbeboepkadciilgmaojbj), [Firefox Add-on link](https://addons.mozilla.org/en-US/firefox/addon/rumin/))
 
-It also comes with site-specific logic for automatically extracting key information, such as video playing time on YouTube, course info and reference on edX, metadata on Kindle notes etc. This can be easily extended to add extraction logic to any web page.
+It comes with site-specific logic for automatically extracting key information, such as video playing time on YouTube, course info and reference on edX, metadata on Kindle notes etc. This can be easily extended to add extraction logic to any web page.
 
 This is useful for learning, research, and saving interesting ideas for  creative work.
 
+You can also search / look up existing content (defaulting to the Rumin backend) using the "Lookup" tab. 
+
 ### Demo video
 [![YouTube thumbnail for video demo](https://storage.googleapis.com/rumin-gcs-bucket/newsletter/youtube-thumbnail.PNG)](https://www.youtube.com/watch?v=auZGwCc1B_o)
-
 
 
 ### Saving with one click
@@ -32,6 +33,9 @@ Currently supported sites include:
 - Comments on Reddit
 and more
 
+### Lookup
+The "Lookup" tab fetches existing captured notes/snippets from the current url by default. You can also use it to search your knowledge base. 
+
 ## Extensible
 It is easy to add support for automatic extraction on more sites. All you need is logic to check the url (or content) of the current page, and add logic to update `customFields` accordingly.
 
@@ -40,7 +44,8 @@ For example, it can be extended to save the top Hacker News comments on a thread
 ## Custom Backend
 To use this extension for a different project, simply swap out the getrumin.com API calls with your custom endpoints.
 
-## Future work
+## Upcoming work
+- Replace jQuery code with React components.
 - Support custom logic for extraction on each page. e.g. saved extraction scripts 
 - Allow editing of automatically extracted fields
 - Support multi-capture on the same page
@@ -49,4 +54,3 @@ To use this extension for a different project, simply swap out the getrumin.com 
 - Support PDF format
 - Faster fetching of existing collections
 - Navigate nested collections (similar to nested folders)
-- Replace jQuery code with React components.
