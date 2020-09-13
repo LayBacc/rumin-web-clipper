@@ -1,0 +1,43 @@
+{
+  "name": "Rumin",
+  "version": "0.0.0.15",
+  "description": "The fastest way to collect information from diverse sources on the web - Rumin helps you capture any content instantly.",
+  "permissions": ["activeTab"],
+  "optional_permissions": ["storage"],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*/*"
+      ],
+      "js": ["vendor/jquery-3.4.1.min.js", "vendor/tiny-tfidf.js", "content.js"],
+      "css": ["css/content.css"]
+    }
+  ],
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icon16.png",
+      "24": "images/icon24.png",
+      "32": "images/icon32.png"
+    }
+  },
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+K",
+        "windows": "Ctrl+Shift+K",
+        "mac": "Command+Shift+K"
+      }
+    }
+  },
+  "icons": {
+    "16": "images/icon16.png",
+    "24": "images/icon24.png",
+    "32": "images/icon32.png",
+    "128": "images/icon128.png"
+  },
+  "manifest_version": 2
+}

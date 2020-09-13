@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="vendor/jquery-3.4.1.min.js"></script>
+    <link href="css/popup.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div id="permission_bar" class="permission-bar">
+      Using local storage helps us serve you better 
+      <br/>
+      <button id="req_storage_permission" style="width: auto;">Allow</button> <a href="https://getrumin.com/spaces/b53797af-3404-4778-9664-3c1c9f0a92eb" target="_blank">Why?</a>
+    </div>
+    
+    <div class="tabs">
+      <div id="save_tab_btn" class="tab active">
+        Save
+      </div>
+      <div id="lookup_tab_btn" class="tab">
+        Lookup
+      </div>
+    </div>
+
+    <div id="save_tab" class="capture-container">
+      <div class="capture-form-container">
+        <!-- FORM -->
+        <div class="form-group">
+          <div class="field-label">Title</div>
+          <textarea id="captured_title_field" class="title-field form-control" placeholder="Untitled page" autofocus="true" maxlength="300">
+          </textarea>
+        </div>
+
+        <div class="captured-selection">
+          <em>
+            <div id="captured_selection">
+            </div>
+          </em>
+        </div>
+        
+        <div class="form-group">
+          <div class="field-label">Note</div>
+          <textarea id="captured_note_field" class="note-field form-control" placeholder="You can use braces {} to link to pages, &#10;e.g. {Economics}, {home page design}"></textarea>
+        </div>
+
+        <div class="form-group">
+          <div id="add_to_collection">
+                
+          </div>
+        </div>
+
+        <!-- Advanced section, for configuring fields -->
+        <div id="custom_fields_section" class="hidden" style="padding: 0.5em 0">
+          <div id="custom_fields_heading" class="section-heading flex">
+            <div class="text">Properties</div>
+            <div>
+              <i 
+                class="fa fa-question-circle small-icon" 
+                title="On some websites, Rumin knows to automatically save useful information."
+                style="vertical-align: top; color: #777; margin-left: 0.5em;"
+              ></i>
+            </div>
+            <div id="custom_fields_display_icon" style="margin-left: auto;">
+              <img 
+              src="https://storage.googleapis.com/rumin-gcs-bucket/static/caret-down.png" 
+              style="width: 16px; display: inline-block; vertical-align: top;"
+            /></div>
+
+            <!-- icon for expanded dropdown -->
+            <div class="custom-fields-content hidden" style="margin-left: auto;">
+              <img 
+              id="custom_fields_display_icon"
+              src="https://storage.googleapis.com/rumin-gcs-bucket/static/caret-up.png" 
+              style="width: 16px; display: inline-block; vertical-align: top;"
+            /></div>
+
+          </div>
+          <div id="custom_fields" class="custom-fields-content hidden">
+            Properties box
+          </div>
+        </div>
+
+        <!-- Custom selection for Slack -->
+        <div id="add_slack_selection" class="btn btn-light form-control hidden" style="margin-bottom: 1em;">
+          <span style="margin-right: 0.5em;"><img src="https://a.slack-edge.com/80588/marketing/img/meta/favicon-32.png" class="btn-icon"></span>
+          <span>Select messages</span>
+        </div>
+        <div id="cancel_slack_selection" class="btn btn-light form-control hidden" style="margin-bottom: 1em;">
+          Cancel selection
+        </div>
+
+        <!-- Custom selection for Slack -->
+        <div id="add_reddit_selection" class="btn btn-light form-control hidden" style="margin-bottom: 1em;">
+          <span style="margin-right: 0.5em;"><img src="https://external-preview.redd.it/iDdntscPf-nfWKqzHRGFmhVxZm4hZgaKe5oyFws-yzA.png?auto=webp&s=38648ef0dc2c3fce76d5e1d8639234d8da0152b2" class="btn-icon"></span>
+          <span>Select messages</span>
+        </div>
+        <div id="cancel_reddit_selection" class="btn btn-light form-control hidden" style="margin-bottom: 1em;">
+          Cancel selection
+        </div>
+
+
+        <img id="screenshot_img" class="hidden" />
+
+        <div id="screenshot_btn" class="btn btn-light form-control" style="margin-bottom: 1em;">
+          <span class="" style="margin-right: 0.5em;"><img src="images/icon-screenshot.png" class="btn-icon" /></span> 
+          <span class="">Add a screenshot</span>
+        </div>
+
+      </div>
+
+      <div class="save-btn-container">
+        <div id="save_btn" class="btn btn-primary form-control">Save</div>
+      </div>
+
+
+      <!-- Selection 
+      [body]
+
+      Any notes you want to attach to this
+
+      Explicit Collections of Tags (entities)
+
+      Link to existing blocks
+
+      [Save btn]
+       -->
+    </div>
+
+    <div id="lookup_tab" class="section-container hidden">
+      <div class="search-box-container">
+        <input id="search_box" class="search-box" placeholder="Search your knowledge base" value="">
+      </div>
+
+      <div id="search_results" class="search-results">
+        <div style="width: 100%; text-align: center">fetching...</div>
+      </div>
+    </div>
+  </body>
+
+  <script src="popup.js"></script>
+  <script src="main.js"></script>
+</html>
